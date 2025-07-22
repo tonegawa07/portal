@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,13 +34,13 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b">
+    <nav className={`fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b ${isScrolled ? 'shadow-sm' : ''}`}>
       <div className="max-w-[600px] lg:max-w-[1200px] xl:max-w-[1536px] mx-auto px-4">
         <div className="flex justify-between items-center h-14">
-          <a href="/" className="flex flex-col leading-tight hover:opacity-80 transition-opacity">
+          <Link href="/" className="flex flex-col leading-tight hover:opacity-80 transition-opacity">
             <span className="text-lg md:text-xl font-semibold text-primary">Yusuke Fukuda</span>
             <span className="text-xs text-foreground/60">@tonegawa07</span>
-          </a>
+          </Link>
           
           <button
             onClick={toggleDarkMode}
