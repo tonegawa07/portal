@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import ProfileCard from '@/components/ProfileCard';
 import SocialLinks from '@/components/SocialLinks';
+import TalksSection from '@/components/TalksSection';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <div className="max-w-[600px] lg:max-w-[1200px] xl:max-w-[1536px] mx-auto px-4 md:px-6">
           <ProfileCard />
           <SocialLinks />
+          <TalksSection />
         </div>
       </main>
     </div>
