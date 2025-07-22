@@ -7,8 +7,7 @@ export default function ProfileCard() {
           <p className="text-xs md:text-sm text-foreground/60">@tonegawa07</p>
         </div>
         <p className="text-xs text-foreground/60 leading-relaxed">
-          ソフトウェアエンジニアをやっています。
-          Web開発、クラウド、データ基盤まで幅広く携わっています。
+          ソフトウェアエンジニアとして、Web開発、クラウド、データ基盤まで幅広く携わっています。
           大学時代は農学部・農学専攻でした。
           茨城県鹿嶋市出身です。
         </p>
