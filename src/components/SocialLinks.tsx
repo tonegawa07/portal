@@ -73,20 +73,20 @@ export default function SocialLinks() {
 
   return (
     <div className="mb-6 flex justify-center">
-      <div className="grid grid-cols-5 gap-3 max-w-3xl">
+      <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 sm:gap-4 max-w-3xl">
         {socials.map((social, index) => (
           <a
             key={index}
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="card p-6 aspect-square flex flex-col items-center justify-center gap-3 hover:scale-[1.02] transition-transform"
+            className="card p-4 sm:p-6 aspect-square flex flex-col items-center justify-center gap-2 sm:gap-3 hover:scale-[1.02] transition-transform"
             aria-label={social.name}
           >
             <div className="relative w-8 h-8 flex items-center justify-center text-foreground/70 hover:text-primary transition-colors">
               {social.icon}
             </div>
-            <span className="text-sm font-medium text-foreground/80">{social.name}</span>
+            <span className="text-xs sm:text-sm font-medium text-foreground/80">{social.name}</span>
           </a>
         ))}
       </div>
