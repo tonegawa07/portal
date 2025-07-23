@@ -4,18 +4,18 @@ import { talks } from '@/data/talks';
 
 export default function TalksSection() {
   return (
-    <div className="mb-12">
-      <h2 className="text-2xl font-semibold mb-6 text-center">Talks</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+    <div className="mb-4 md:mb-12">
+      <h2 className="text-2xl font-semibold mb-3 md:mb-6 text-center">Talks</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 max-w-5xl mx-auto">
         {talks.map((talk, index) => (
-          <div key={index} className="card p-6">
-            <p className="text-sm text-foreground/60 mb-2">{talk.date}</p>
-            <h3 className="text-lg font-semibold mb-3">{talk.title}</h3>
+          <div key={index} className="card p-3 md:p-6">
+            <p className="text-sm text-foreground/60 mb-1 md:mb-2">{talk.date}</p>
+            <h3 className="text-lg font-semibold mb-2 md:mb-3">{talk.title}</h3>
             <a 
               href={talk.eventUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-foreground/70 hover:text-primary transition-colors inline-flex items-center gap-1 mb-4"
+              className="text-sm text-foreground/70 hover:text-primary transition-colors inline-flex items-center gap-1 mb-3 md:mb-4"
             >
               {talk.event}
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -23,7 +23,7 @@ export default function TalksSection() {
               </svg>
             </a>
             
-            <div className="relative w-full" style={{ minHeight: talk.speakerDeckEmbed ? '315px' : '0' }}>
+            <div className="relative w-full" style={{ minHeight: talk.speakerDeckEmbed ? '200px' : '0' }}>
               {talk.speakerDeckEmbed && (
                 <div 
                   className="relative w-full"
