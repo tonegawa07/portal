@@ -10,7 +10,21 @@ export type Talk = {
 // speakerDeckEmbedには、Speaker Deckの埋め込みコードをそのままコピペしてください
 export const talks: Talk[] = [
   {
-    date: "2024.07.14",
+    date: "2025.08.20",
+    event: "Mita.ts #7",
+    eventUrl: "https://mitats.connpass.com/event/360508",
+    title: "TypeSpecで実現する辛くないOpenAPIスキーマ駆動開発",
+    speakerDeckEmbed: `<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/2030d716d33b423da20882b5a576fb2e" title="TypeSpecで実現する辛くないOpenAPIスキーマ駆動開発" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>`,
+  },
+  {
+    date: "2025.07.30",
+    event: "失敗談Night 2025 Summer",
+    eventUrl: "https://dev-hive.connpass.com/event/361846",
+    title: "コミュニケーション不足が起こした悲劇",
+    speakerDeckEmbed: null,
+  },
+  {
+    date: "2025.07.14",
     event: "めぐろLT #29 「Vibe Codingで作ったものをおしえてください」",
     eventUrl: "https://meguro-lt.connpass.com/event/359809",
     title: "構造化・自動化・ガードレール - Vibe Coding実践記 -",
