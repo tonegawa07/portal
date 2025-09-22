@@ -10,6 +10,13 @@ export type Talk = {
 // speakerDeckEmbedには、Speaker Deckの埋め込みコードをそのままコピペしてください
 export const talks: Talk[] = [
   {
+    date: "2025.09.18",
+    event: "めぐろLT #31 「うちのチーム開発こうしてます」",
+    eventUrl: "https://meguro-lt.connpass.com/event/363098",
+    title: "社内LTで醸成する開発組織のアウトプット文化",
+    speakerDeckEmbed: `<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/f55137b336f548b0a90a099e7b2dd906" title="社内LTで醸成する開発組織のアウトプット文化" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>`,
+  },
+  {
     date: "2025.08.20",
     event: "Mita.ts #7",
     eventUrl: "https://mitats.connpass.com/event/360508",
