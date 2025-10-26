@@ -35,12 +35,17 @@ export interface ZennResponse {
 }
 
 export async function fetchZennArticles(): Promise<ZennArticle[]> {
-  const response = await fetch(`https://zenn.dev/api/articles?username=${ZENN_USERNAME}&order=latest`);
-  
+  const response = await fetch(
+    `https://zenn.dev/api/articles?username=${ZENN_USERNAME}&order=latest`,
+    {
+      next: { revalidate: 86400 } // 24時間ごとに再検証
+    }
+  );
+
   if (!response.ok) {
     throw new Error('Failed to fetch Zenn articles');
   }
-  
+
   const data: ZennResponse = await response.json();
   return data.articles;
 }
