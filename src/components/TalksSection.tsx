@@ -11,24 +11,34 @@ export default function TalksSection() {
           <div key={index} className="card p-3 md:p-6">
             <p className="text-sm text-foreground/60 mb-1 md:mb-2">{talk.date}</p>
             <h3 className="text-lg font-semibold mb-2 md:mb-3">{talk.title}</h3>
-            <a 
-              href={talk.eventUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-foreground/70 hover:text-primary transition-colors inline-flex items-center gap-1 mb-3 md:mb-4"
-            >
-              {talk.event}
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
+            {talk.eventUrl ? (
+              <a
+                href={talk.eventUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-foreground/70 hover:text-primary transition-colors inline-flex items-center gap-1 mb-3 md:mb-4"
+              >
+                {talk.event}
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            ) : (
+              <p className="text-sm text-foreground/70 mb-3 md:mb-4">
+                {talk.event}
+              </p>
+            )}
             
-            <div className="relative w-full" style={{ minHeight: talk.speakerDeckEmbed ? '200px' : '0' }}>
-              {talk.speakerDeckEmbed && (
-                <div 
+            <div className="relative w-full">
+              {talk.speakerDeckEmbed ? (
+                <div
                   className="relative w-full"
                   dangerouslySetInnerHTML={{ __html: talk.speakerDeckEmbed }}
                 />
+              ) : (
+                <div className="relative w-full bg-background/50 border border-border rounded-md flex items-center justify-center" style={{ aspectRatio: '560 / 315' }}>
+                  <p className="text-foreground/40 text-sm">No deck</p>
+                </div>
               )}
             </div>
           </div>

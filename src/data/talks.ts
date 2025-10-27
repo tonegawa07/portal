@@ -1,14 +1,20 @@
 export type Talk = {
   date: string;
   event: string;
-  eventUrl: string;
+  eventUrl?: string;
   title: string;
-  speakerDeckEmbed?: string | null;
+  speakerDeckEmbed?: string;
 };
 
 // 登壇情報を追加する際は、このファイルのtalks配列に追加するだけでOK
 // speakerDeckEmbedには、Speaker Deckの埋め込みコードをそのままコピペしてください
 export const talks: Talk[] = [
+  {
+    date: "2025.10.23",
+    event: "BuiLT",
+    title: "秩序を保つためのレイヤードアーキテクチャ",
+    speakerDeckEmbed: `<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/b85e04a2d3d847b79fadd0aa83985e86" title="秩序を保つためのレイヤードアーキテクチャ" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>`,
+  },
   {
     date: "2025.09.18",
     event: "めぐろLT #31 「うちのチーム開発こうしてます」",
@@ -28,7 +34,6 @@ export const talks: Talk[] = [
     event: "失敗談Night 2025 Summer",
     eventUrl: "https://dev-hive.connpass.com/event/361846",
     title: "コミュニケーション不足が起こした悲劇",
-    speakerDeckEmbed: null,
   },
   {
     date: "2025.07.14",
