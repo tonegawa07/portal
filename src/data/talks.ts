@@ -10,6 +10,13 @@ export type Talk = {
 // speakerDeckEmbedには、Speaker Deckの埋め込みコードをそのままコピペしてください
 export const talks: Talk[] = [
   {
+    date: "2025.11.12",
+    event: "僕・私が考える最強の開発生産性を紹介します！【D-Plus Tokyo#19】",
+    eventUrl: "https://d-plus.connpass.com/event/373156/",
+    title: "開発生産性が組織文化になるまでの軌跡",
+    speakerDeckEmbed: `<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/78620a917bb74756bf1c73a0793937ae" title="開発生産性が組織文化になるまでの軌跡" allowfullscreen="true" style="border: 0px; background: padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>`,
+  },
+  {
     date: "2025.10.23",
     event: "BuiLT",
     title: "秩序を保つためのレイヤードアーキテクチャ",
