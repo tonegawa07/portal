@@ -38,7 +38,7 @@ export async function fetchZennArticles(): Promise<ZennArticle[]> {
   const response = await fetch(
     `https://zenn.dev/api/articles?username=${ZENN_USERNAME}&order=latest`,
     {
-      next: { revalidate: 86400 } // 24時間ごとに再検証
+      cache: 'no-store' // 常に最新データを取得
     }
   );
 

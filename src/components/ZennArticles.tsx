@@ -1,7 +1,24 @@
-import { fetchZennArticles } from '@/lib/zenn';
+'use client';
 
-export default async function ZennArticles() {
-  const articles = await fetchZennArticles();
+import { useEffect, useState } from 'react';
+import type { ZennArticle } from '@/lib/zenn';
+
+export default function ZennArticles() {
+  const [articles, setArticles] = useState<ZennArticle[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/zenn')
+      .then((res) => res.json())
+      .then((data) => {
+        setArticles(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Failed to fetch articles:', error);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="mb-4 md:mb-12">
@@ -9,8 +26,11 @@ export default async function ZennArticles() {
         <img src="/zenn-logo.svg" alt="Zenn" className="h-6 w-6" />
         Articles
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 max-w-5xl mx-auto">
-        {articles.map((article) => (
+      {loading ? (
+        <div className="text-center text-foreground/60">Loading...</div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 max-w-5xl mx-auto">
+          {articles.map((article) => (
           <a
             key={article.id}
             href={`https://zenn.dev${article.path}`}
@@ -44,8 +64,9 @@ export default async function ZennArticles() {
               </div>
             </div>
           </a>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
