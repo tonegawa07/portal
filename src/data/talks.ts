@@ -10,6 +10,12 @@ export type Talk = {
 // speakerDeckEmbedには、Speaker Deckの埋め込みコードをそのままコピペしてください
 export const talks: Talk[] = [
   {
+    date: "2026.01.16",
+    event: "社内イベント",
+    title: "ルール化・言語化・ワークフロー",
+    speakerDeckEmbed: `<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/9a58187e88914a89816f343fb18bc4ca" title="ルール化・言語化・ワークフロー" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>`,
+  },
+  {
     date: "2025.11.12",
     event: "僕・私が考える最強の開発生産性を紹介します！【D-Plus Tokyo#19】",
     eventUrl: "https://d-plus.connpass.com/event/373156/",

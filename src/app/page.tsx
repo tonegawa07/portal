@@ -3,6 +3,7 @@ import ProfileCard from '@/components/ProfileCard';
 import SocialLinks from '@/components/SocialLinks';
 import TalksSection from '@/components/TalksSection';
 import ZennArticles from '@/components/ZennArticles';
+import QiitaArticles from '@/components/QiitaArticles';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
           <SocialLinks />
           <TalksSection />
           <ZennArticles />
+          <QiitaArticles />
         </div>
       </main>
       <Footer />

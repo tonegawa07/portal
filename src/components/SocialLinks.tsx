@@ -47,9 +47,22 @@ export default function SocialLinks() {
       name: "Zenn",
       href: "https://zenn.dev/tonegawa07",
       icon: (
-        <Image 
-          src="/zenn-logo.svg" 
-          alt="Zenn" 
+        <Image
+          src="/zenn-logo.svg"
+          alt="Zenn"
+          width={32}
+          height={32}
+          className="object-contain"
+        />
+      )
+    },
+    {
+      name: "Qiita",
+      href: "https://qiita.com/tonegawa07",
+      icon: (
+        <Image
+          src="/qiita-logo.svg"
+          alt="Qiita"
           width={32}
           height={32}
           className="object-contain"
@@ -60,9 +73,9 @@ export default function SocialLinks() {
       name: "note",
       href: "https://note.com/tonegawa07",
       icon: (
-        <Image 
-          src="/note-logo.svg" 
-          alt="note" 
+        <Image
+          src="/note-logo.svg"
+          alt="note"
           width={32}
           height={32}
           className="dark:brightness-0 dark:invert object-contain"
@@ -73,7 +86,7 @@ export default function SocialLinks() {
 
   return (
     <div className="mb-6 flex justify-center">
-      <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 sm:gap-4 max-w-3xl">
+      <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-4 max-w-4xl">
         {socials.map((social, index) => (
           <a
             key={index}
