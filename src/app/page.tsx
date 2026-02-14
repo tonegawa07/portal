@@ -2,8 +2,8 @@ import Navigation from '@/components/Navigation';
 import ProfileCard from '@/components/ProfileCard';
 import SocialLinks from '@/components/SocialLinks';
 import TalksSection from '@/components/TalksSection';
-import ZennArticles from '@/components/ZennArticles';
-import QiitaArticles from '@/components/QiitaArticles';
+import DecksSection from '@/components/DecksSection';
+import ArticlesSection from '@/components/ArticlesSection';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -15,8 +15,8 @@ export default function Home() {
           <ProfileCard />
           <SocialLinks />
           <TalksSection />
-          <ZennArticles />
-          <QiitaArticles />
+          <DecksSection />
+          <ArticlesSection />
         </div>
       </main>
       <Footer />
