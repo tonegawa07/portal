@@ -3,9 +3,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+const sections = ['about', 'talks', 'decks', 'articles'] as const;
+
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,12 +23,29 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     checkDarkMode();
 
-    const observer = new MutationObserver(checkDarkMode);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    const darkModeObserver = new MutationObserver(checkDarkMode);
+    darkModeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: '-64px 0px -60% 0px' }
+    );
+
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el) sectionObserver.observe(el);
+    }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      observer.disconnect();
+      darkModeObserver.disconnect();
+      sectionObserver.disconnect();
     };
   }, []);
 
@@ -43,10 +63,19 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden sm:flex items-center gap-4 text-sm">
-            <a href="#about" className="text-foreground/70 hover:text-primary transition-colors">About</a>
-            <a href="#talks" className="text-foreground/70 hover:text-primary transition-colors">Talks</a>
-            <a href="#decks" className="text-foreground/70 hover:text-primary transition-colors">Decks</a>
-            <a href="#articles" className="text-foreground/70 hover:text-primary transition-colors">Articles</a>
+            {sections.map((id) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                className={`transition-colors ${
+                  activeSection === id
+                    ? 'text-primary font-medium'
+                    : 'text-foreground/70 hover:text-primary'
+                }`}
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </a>
+            ))}
           </div>
 
           <button
