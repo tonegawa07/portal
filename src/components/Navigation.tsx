@@ -41,7 +41,14 @@ export default function Navigation() {
             <span className="text-lg md:text-xl font-semibold text-primary">Yusuke Fukuda</span>
             <span className="text-xs text-foreground/60">@tonegawa07</span>
           </Link>
-          
+
+          <div className="hidden sm:flex items-center gap-4 text-sm">
+            <a href="#about" className="text-foreground/70 hover:text-primary transition-colors">About</a>
+            <a href="#talks" className="text-foreground/70 hover:text-primary transition-colors">Talks</a>
+            <a href="#decks" className="text-foreground/70 hover:text-primary transition-colors">Decks</a>
+            <a href="#articles" className="text-foreground/70 hover:text-primary transition-colors">Articles</a>
+          </div>
+
           <button
             onClick={toggleDarkMode}
             className="p-1.5 rounded-md hover:bg-secondary transition-colors"

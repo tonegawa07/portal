@@ -21,8 +21,8 @@ export default function ArticlesSection() {
   }, []);
 
   return (
-    <div className="mb-4 md:mb-12">
-      <h2 className="text-2xl font-semibold mb-3 md:mb-6 text-center">Articles</h2>
+    <div id="articles" className="mb-4 md:mb-12">
+      <h3 className="text-xl font-semibold mb-3 md:mb-6 text-center">Articles</h3>
       {loading ? (
         <div className="text-center text-foreground/60">Loading...</div>
       ) : (

@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+
   :root {
     --primary: 151 55% 41%;
     --primary-foreground: 0 0% 100%;
